@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+  --font-urdu-naskh: "Noto Naskh Arabic", serif;
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { @apply bg-zinc-50 text-zinc-900 antialiased; font-family: var(--font-sans); }
+
+.font-urdu { font-family: var(--font-urdu); line-height: 2.1; }
+.font-urdu-naskh { font-family: var(--font-urdu-naskh); }
+
+[dir="rtl"] body, [dir="rtl"] .app-shell { font-family: var(--font-urdu-naskh), var(--font-sans); }
+[dir="rtl"] .ur-display { font-family: var(--font-urdu); line-height: 2; }
+
+/* numbers always LTR even in RTL layout */
+.num { direction: ltr; unicode-bidi: embed; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 8px; border: 2px solid #fafafa; }
+::-webkit-scrollbar-track { background: transparent; }
+
+input, select, textarea { @apply outline-none; }
+
+/* ---------- PRINT ---------- */
+.print-area { display: none; }
+
+/* cleaner numeric inputs — no spinner arrows crowding the value */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* off-screen container used when rendering a report to a downloadable PDF */
+.pdf-root .print-area {
+  display: block !important;
+  background: white;
+}
+
+@media print {
+  .screen-root { display: none !important; }
+  .print-area { display: block !important; background: white; }
+  .no-print { display: none !important; }
+  @page { margin: 8mm; }
+  .print-a5 { font-size: 12px; }
+  .print-thermal { width: 72mm; font-size: 11px; }
+  .print-a4 { font-size: 12px; }
+}
