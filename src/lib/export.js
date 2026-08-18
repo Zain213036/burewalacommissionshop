@@ -26,7 +26,40 @@ export async function exportPdf(element, filename) {
         margin: [8, 8, 10, 8],
         filename,
         image: { type: 'jpeg', quality: 0.96 },
-        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+        html2canvas: { 
+          scale: 2, 
+          useCORS: true, 
+          backgroundColor: '#ffffff',
+          onclone: (doc) => {
+            const canvas = doc.createElement('canvas');
+            canvas.width = 1;
+            canvas.height = 1;
+            const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+            const elements = doc.querySelectorAll('*');
+            for (let i = 0; i < elements.length; i++) {
+              const el = elements[i];
+              const style = doc.defaultView.getComputedStyle(el);
+              
+              const props = [
+                'color', 'backgroundColor', 'borderTopColor', 
+                'borderRightColor', 'borderBottomColor', 'borderLeftColor',
+                'textDecorationColor', 'outlineColor'
+              ];
+              
+              for (const prop of props) {
+                const val = style[prop];
+                if (val && (val.includes('oklch') || val.includes('color-mix') || val.includes('oklab'))) {
+                   ctx.clearRect(0, 0, 1, 1);
+                   ctx.fillStyle = val;
+                   ctx.fillRect(0, 0, 1, 1);
+                   const d = ctx.getImageData(0, 0, 1, 1).data;
+                   el.style[prop] = `rgba(${d[0]}, ${d[1]}, ${d[2]}, ${d[3] / 255})`;
+                }
+              }
+            }
+          }
+        },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'] },
       })
