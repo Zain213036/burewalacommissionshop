@@ -239,7 +239,7 @@ export const DICT = {
   role: ['Role', 'کردار'],
   changePassword: ['New password (leave blank to keep)', 'نیا پاس ورڈ (خالی چھوڑیں تو وہی رہے گا)'],
   shopAddress: ['Address', 'پتہ'],
-  grainMarket: ['Grain Market (Ghala Mandi), Punjab, Pakistan', 'غلہ منڈی، پنجاب، پاکستان'],
+  grainMarket: ['Grain Market (Ghala Mandi), Burewala', 'غلہ منڈی، بریوالہ'],
   invoice: ['Invoice / Voucher', 'رسید / واؤچر'],
   thankYou: ['Thank you for your business', 'آپ کے کاروبار کا شکریہ'],
 

@@ -2,7 +2,7 @@
 ## "Arhat Manager" (آڑھت منیجر)
 
 **Version:** 2.0 (Final — incorporates all client decisions)
-**Prepared for:** Grain Market (Mandi) Commission Shop, Punjab, Pakistan
+**Prepared for:** Grain Market (Mandi) Commission Shop, Burewala
 **Type:** Bilingual (English + Urdu) Web Application, Offline-capable
 **Users:** 1 Owner (Malik) + 1 or more Munshi (clerks)
 **Timezone:** Asia/Karachi (PKT) — all timestamps
@@ -14,7 +14,7 @@
 
 ## A1. How a Commission Shop (Arhat) Works
 
-A commission shop in a Pakistani grain mandi operates in two ways, often simultaneously:
+A commission shop in a grain mandi operates in two ways, often simultaneously:
 
 **Mode 1 — Trading (خرید و فروخت / Khareed-o-Farokht):**
 The shop BUYS produce from a seller (farmer) at one rate, holds it in its own stock, and later SELLS it to a buyer (beopari, flour mill, feed mill) at a higher rate. The shop's earning = margin (Sale − Purchase cost). Example: buy at Rs. 100, sell at Rs. 200 → earning Rs. 100.

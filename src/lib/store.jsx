@@ -73,7 +73,7 @@ function seedDb() {
 function migrateDb(d) {
   let changed = false;
   // Upgrade generic shop name to real client name
-  if (d.settings?.shopNameEn === 'Pakistan Commission Shop') {
+  if (d.settings?.shopNameEn !== 'Burewala Commission Shop') {
     d.settings = {
       ...d.settings,
       shopNameEn: 'Burewala Commission Shop',

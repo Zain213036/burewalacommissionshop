@@ -30,8 +30,8 @@ export function Login() {
           <div className="flex items-center gap-4">
             <LogoMark size={64} />
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight leading-tight">Pakistan Commission Shop</h1>
-              <p className="font-urdu text-xl text-brand-300 mt-1">پاکستان کمیشن شاپ</p>
+              <h1 className="text-2xl font-extrabold tracking-tight leading-tight">Burewala Commission Shop</h1>
+              <p className="font-urdu text-xl text-brand-300 mt-1">بریوالہ کمیشن شاپ</p>
             </div>
           </div>
         </motion.div>
@@ -42,7 +42,7 @@ export function Login() {
           </p>
           <div className="flex items-center gap-2 mt-6 text-sm text-brand-200 num">☎ +92 344 7399825</div>
         </motion.div>
-        <p className="text-xs text-brand-400/60 relative z-10">© 2026 Pakistan Commission Shop · Grain Market, Punjab</p>
+        <p className="text-xs text-brand-400/60 relative z-10">© 2026 Burewala Commission Shop · Grain Market, Burewala</p>
       </div>
 
       {/* Form panel */}

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function LogoMark({ size = 40 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-label="Pakistan Commission Shop logo">
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-label="Burewala Commission Shop logo">
       <defs>
         <linearGradient id="lg-bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#065f46" />
@@ -39,14 +39,14 @@ export function LogoLockup({ size = 44, dark = false, lang = 'en' }) {
       <LogoMark size={size} />
       <div className="flex flex-col leading-tight">
         {lang === 'ur' ? (
-          <>
-            <span className={`font-urdu text-[17px] font-bold ${dark ? 'text-white' : 'text-brand-900'}`}>پاکستان کمیشن شاپ</span>
-            <span className={`text-[10px] tracking-[0.18em] uppercase font-semibold ${dark ? 'text-brand-300' : 'text-brand-700/70'}`}>Pakistan Commission Shop</span>
-          </>
+          <div className="flex flex-col text-start justify-center">
+            <span className={`font-urdu text-[17px] font-bold ${dark ? 'text-white' : 'text-brand-900'}`}>بریوالہ کمیشن شاپ</span>
+            <span className={`text-[10px] tracking-[0.18em] uppercase font-semibold ${dark ? 'text-brand-300' : 'text-brand-700/70'}`}>Burewala Commission Shop</span>
+          </div>
         ) : (
           <>
-            <span className={`text-[15px] font-extrabold tracking-tight ${dark ? 'text-white' : 'text-brand-900'}`}>Pakistan Commission Shop</span>
-            <span className={`font-urdu text-[13px] ${dark ? 'text-brand-300' : 'text-brand-700/80'}`}>پاکستان کمیشن شاپ</span>
+            <span className={`text-[15px] font-extrabold tracking-tight ${dark ? 'text-white' : 'text-brand-900'}`}>Burewala Commission Shop</span>
+            <span className={`font-urdu text-[13px] ${dark ? 'text-brand-300' : 'text-brand-700/80'}`}>بریوالہ کمیشن شاپ</span>
           </>
         )}
       </div>
